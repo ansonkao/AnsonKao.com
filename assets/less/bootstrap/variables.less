@@ -3,6 +3,13 @@
 // --------------------------------------------------
 
 
+@sky-blue-dark:         #004C73;
+@sky-blue-medium:       #445566;
+@sky-blue-faint:        #6A8B9C;
+@sky-blue-bright:       #0088DD;
+@sun-orange:            #FF9944;
+
+
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
@@ -13,7 +20,7 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
+@brand-primary:         @sky-blue-dark;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -25,14 +32,14 @@
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               transparent;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @sky-blue-medium;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @sky-blue-bright;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      darken(@link-color, 25%);
 
 
 //== Typography
@@ -50,9 +57,9 @@
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
 @font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h2:            floor((@font-size-base * 1.7)); // ~24px
+@font-size-h3:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h4:            ceil((@font-size-base * 1.125)); // ~16px
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
 
@@ -176,7 +183,7 @@
 //** Text color for `<input>`s
 @input-color:                    @gray;
 //** `<input>` border color
-@input-border:                   #ccc;
+@input-border:                   @sky-blue-dark;
 //** `<input>` border radius
 @input-border-radius:            @border-radius-base;
 //** Border color for inputs on focus
@@ -316,7 +323,7 @@
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop:      ((1140px + @grid-gutter-width));
+@container-large-desktop:      ((940px + @grid-gutter-width));
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 

@@ -8,6 +8,8 @@ add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails com
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
+remove_theme_support('bootstrap-top-navbar');  // Don't want it this time around!
+
 /**
  * Configuration values
  */
@@ -54,8 +56,8 @@ function roots_display_sidebar() {
      * The second element must be an array even if there's only 1 argument.
      */
     array(
-      'is_404',
-      'is_front_page'
+      //'is_404',
+      //'is_front_page'
     ),
     /**
      * Page template checks (via is_page_template())

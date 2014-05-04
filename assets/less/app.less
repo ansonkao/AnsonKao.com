@@ -8,7 +8,50 @@
    Base
    ========================================================================== */
 
-body { }
+html {
+  margin: 0;
+  padding: 0;
+  
+  background-color: black;
+	background-image: url('../img/good-morning-toronto-fresh.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: 960px;
+}
+
+body {
+  margin: 15px;
+}
+
+h1 { letter-spacing: -1.5px; font-weight: bold; }
+h2 { letter-spacing: -1.0px; font-weight: bold; }
+h3 { letter-spacing: -0.5px; font-weight: bold; }
+h4 { letter-spacing: -0.2px; font-weight: bold; }
+
+a {
+  text-shadow: -1px -1px 0px rgba(255,255,255,0.25);
+}
+
+.img-embed {
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 5px;
+  .box-shadow( 0px 0px 1px 1px rgba(0,0,0,0.5) );
+}
+
+.translucent-content-area {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+  
+  a {
+    color: @sun-orange;
+    text-shadow: 1px 1px 1px rgba(0,0,0,1.0);
+  }
+}
+
+blockquote {
+  .box-shadow( inset 2px 0 0 -1px rgba(0,0,0,0.5) );
+}
 
 
 
@@ -18,13 +61,87 @@ body { }
 
 .banner { }
 
+#header-brand-stamp {
+  h1 {
+    a {
+      font-size: 48px;
+      color: white;
+      text-shadow: 0px 0px 25px #000;
+      line-height: 100px;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+  }
+}
+
+.nav.nav-anson-toolbar {
+  display: inline-block;
+  background-color: rgba(128,128,128,0.64);
+  .box-shadow( 0px 0px 10px rgba(0,0,0,1.0) );
+  margin-bottom: 20px;
+
+  li {
+    float: left;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(0,0,0,0.5);
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgba(255,255,255,0.25);
+    #gradient > .vertical( rgba(255,255,255,0.5), rgba(128,128,128,0.3) );
+    overflow: hidden;
+
+    + li {
+      border-radius: 0px;
+      
+      &.active {
+        border-left-width: 0px;
+      }
+    }
+    
+    &:last-child {
+      border-radius: 0px 5px 5px 0px;
+      border-right: 1px solid rgba(255,255,255,0.5);
+    }
+    
+    &.active {
+      background-image: none;
+      .box-shadow( inset 1px 1px 10px rgba(0,0,0,0.4) );
+      
+      a:hover {
+        background-image: none !important;
+      }
+    }
+    
+    a {
+      color: #FFF;
+      font-weight: bold;
+      text-shadow: -1px -1px 1px rgba(0,0,0,0.5);
+      
+      &:hover {
+        background-color: transparent;
+        #gradient > .vertical( rgba(255,255,255,0.75), rgba(128,128,128,0.5) );
+      }
+      &:active {
+        #gradient > .vertical( rgba(128,128,128,0.25), rgba(255,255,255,0.5) );
+        .box-shadow( inset 1px 1px 10px rgba(0,0,0,0.25) );
+      }
+    }
+  }
+}
+
 
 
 /* ==========================================================================
    Content
    ========================================================================== */
 
-.content { }
+.content {
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 5px;
+  background-color: rgba(32,32,32,0.5);
+  .box-shadow( 0px 0px 10px rgba(0,0,0,1.0) );
+  overflow: hidden;
+}
 
 
 
@@ -32,7 +149,24 @@ body { }
    Primary Content
    ========================================================================== */
 
-.main { }
+.main {
+  padding-top: 15px;
+  background-color: rgba(255,255,255,0.3);
+  #gradient > .horizontal-three-colors( rgba(0,0,0,0.0), rgba(96,96,96,0.5), 75%, rgba(255,255,255,0.1) );
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  
+  .page-header {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: none;
+    
+    h1 {
+      margin-top: 0px;
+      color: #FFF;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+    }
+  }
+}
 
 /* Gallery Shortcode */
 .gallery-row { padding: 15px 0; }
@@ -43,7 +177,10 @@ body { }
    Sidebar
    ========================================================================== */
 
-.sidebar { }
+.sidebar {
+  border-top: 1px solid rgba(255,255,255,0.5);
+  padding-bottom: 15px;
+}
 
 
 
@@ -51,11 +188,83 @@ body { }
    Posts
    ========================================================================== */
 
-.hentry header { }
-.hentry time { }
-.hentry .byline { }
-.hentry .entry-content { }
-.hentry footer { }
+.hentry {
+  border: 1px solid rgba(255,255,255,0.75);
+  border-radius: 5px;
+  .box-shadow( 0px 0px 10px rgba(0,0,0,0.5) );
+  background-color: rgba(216,240,255,0.6);
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  header {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    .box-shadow( inset 0px -2px 0px -1px rgba(0,0,0,0.25) );
+    #gradient > .vertical( rgba(255,255,255,0.4), rgba(161,189,206,0.3) );
+
+    .entry-title {
+      margin-top: 0px;
+      margin-bottom: 5px;
+      color: @sky-blue-dark;
+
+      a {
+        color: @sky-blue-dark;
+      }
+    }
+  }
+  
+  .entry-meta {
+    color: @sky-blue-faint;
+    margin-bottom: 0px;
+  }
+  
+  .entry-content,
+  .entry-summary {
+    padding: 15px ;
+    background-color: rgba(216,240,255,0.3);
+  }
+  
+  footer {
+    border-top: 1px solid rgba(0,0,0,0.25);
+    .box-shadow( inset 0px 2px 0px -1px rgba(255,255,255,0.5) );
+    #gradient > .vertical( rgba(255,255,255,0.4), rgba(161,189,206,0.3) );
+    min-height: 2px;
+  }
+  
+  #disqus_thread {
+    padding: 10px 15px 0px;
+    background-color: rgba(255,255,255,0.5);
+  }
+  #respond {
+    padding: 0px 10px;
+  }
+}
+
+
+
+/* ==========================================================================
+   Widgets
+   ========================================================================== */
+
+.social_stickers_widget {
+  a {
+    margin-right: 5px;
+    
+    img {
+      width:  32px !important;
+      height: 32px !important;
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 5px;
+      .box-shadow( 0px 0px 1px 1px rgba(0,0,0,0.8) );
+      .opacity( 0.75 );
+      
+      &:hover {
+        .opacity( 1.0 );
+      }
+    }
+  }
+}
 
 
 
@@ -63,7 +272,10 @@ body { }
    Footer
    ========================================================================== */
 
-.content-info { }
+.content-info {
+  margin: 20px auto 50px;
+  color: #FFF;
+}
 
 
 
@@ -83,7 +295,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (min-width: @screen-sm-min) { @import "app-sm.less"; }
 
 @media (min-width: @screen-md-min) { }
 
