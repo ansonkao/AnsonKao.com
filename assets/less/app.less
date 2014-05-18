@@ -11,13 +11,24 @@
 html {
   margin: 0;
   padding: 0;
-  
+  background-color: black;
+}
+
+#background-image {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: black;
 	background-image: url('../img/good-morning-toronto-fresh.jpg');
 	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
-	background-size: 960px;
+  background-clip: border-box;
+  background-origin: padding-box;
+	background-attachment: fixed !important;
+	background-size: 960px !important;
+	background-position: center -225px;
 }
 
 body {
@@ -62,16 +73,26 @@ blockquote {
 .banner { }
 
 #header-brand-stamp {
+  margin: 15px auto 45px;
+  
   h1 {
+    margin-top: 0px;
+    
     a {
       font-size: 48px;
       color: white;
-      text-shadow: 0px 0px 25px #000;
-      line-height: 100px;
+      text-shadow: 1px 1px 3px #000;
+      line-height: 1;
       vertical-align: middle;
       text-decoration: none;
     }
   }
+}
+#header-location {
+  color: white;
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: 1px 1px 0px #000;
 }
 
 .nav.nav-anson-toolbar {
@@ -79,39 +100,17 @@ blockquote {
   background-color: rgba(128,128,128,0.64);
   .box-shadow( 0px 0px 10px rgba(0,0,0,1.0) );
   margin-bottom: 20px;
+  border-radius: 5px;
 
   li {
-    float: left;
-    display: inline-block;
+    display: block;
     border: 1px solid rgba(255,255,255,0.5);
-    border-right: 1px solid rgba(0,0,0,0.5);
-    border-radius: 5px 0px 0px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    border-radius: 5px 5px 0px 0px;
     background-color: rgba(255,255,255,0.25);
     #gradient > .vertical( rgba(255,255,255,0.5), rgba(128,128,128,0.3) );
     overflow: hidden;
 
-    + li {
-      border-radius: 0px;
-      
-      &.active {
-        border-left-width: 0px;
-      }
-    }
-    
-    &:last-child {
-      border-radius: 0px 5px 5px 0px;
-      border-right: 1px solid rgba(255,255,255,0.5);
-    }
-    
-    &.active {
-      background-image: none;
-      .box-shadow( inset 1px 1px 10px rgba(0,0,0,0.4) );
-      
-      a:hover {
-        background-image: none !important;
-      }
-    }
-    
     a {
       color: #FFF;
       font-weight: bold;
@@ -126,6 +125,46 @@ blockquote {
         .box-shadow( inset 1px 1px 10px rgba(0,0,0,0.25) );
       }
     }
+    
+    // Middle button
+    + li {
+      border-radius: 0px;
+      
+      &.active {
+        border-top-width: 0px;
+      }
+    }
+    
+    // Last button
+    &:last-child {
+      border-radius: 0px 0px 5px 5px;
+      border-right: 1px solid rgba(255,255,255,0.5);
+    }
+
+    // Current item
+    &.active {
+      background-image: none;
+      .box-shadow( inset 1px 1px 10px rgba(0,0,0,0.4) );
+      
+      a:hover {
+        background-image: none !important;
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  float: none;
+  display: block;
+  margin: 0px auto 20px;
+  
+  #gradient > .vertical( rgba(255,255,255,0.75), rgba(192,192,192,0.64) );
+  border-color: rgba(255,255,255,0.75);
+  .box-shadow( 0px 0px 10px rgba(0,0,0,1.0) );
+  
+  .icon-bar {
+    background-color: white;
+    .box-shadow( -1px -1px 1px rgba(0,0,0,0.5) );
   }
 }
 
@@ -295,8 +334,10 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
+@media (min-width: @screen-xs-min) { @import "app-xs.less"; }
+
 @media (min-width: @screen-sm-min) { @import "app-sm.less"; }
 
-@media (min-width: @screen-md-min) { }
+@media (min-width: @screen-md-min) { @import "app-md.less"; }
 
 @media (min-width: @screen-lg-min) { }
