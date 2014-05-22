@@ -14,41 +14,63 @@
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
 
+
 (function($) {
 
-// Use this variable to set up the common and page specific functions. If you 
-// rename this variable, you will also need to rename the namespace below.
-var Roots = {
+  
+var AnsonKaoFunctions = {
+  
+  mind_map_toggle: function( $clicked_element ) {
+    $("#mind-map").toggleClass("collapsed");
+    $("#background-image").toggleClass("mind-map-expanded");
+    $clicked_element.find("span").toggleClass("glyphicon-chevron-down glyphicon-remove");
+  }
+  
+};
+
+  
+var AnsonKaoModules = {
+  
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+      
+      // Mind-map toggle
+      $(".js-mind-map-toggle").click(function(){
+        AnsonKaoFunctions.mind_map_toggle( $(this) );
+        return false;
+      });
+      
+      // Disable incomplete links (will automatically enable once I give them a destination!)
+      $("a[href='']").click(function(){
+        return false;
+      });
+      
     }
   },
+  
   // Home page
   home: {
     init: function() {
-      // JavaScript to be fired on the home page
-    }
-  },
-  // About us page, note the change from about-us to about_us.
-  about_us: {
-    init: function() {
-      // JavaScript to be fired on the about us page
+      
+      // Show the mind on load at home page
+      //AnsonKaoFunctions.mind_map_toggle( $(".js-mind-map-toggle") );
+      
     }
   }
+  
 };
 
-// The routing fires all common scripts, followed by the page specific scripts.
-// Add additional events for more control over timing e.g. a finalize event
+  
 var UTIL = {
   fire: function(func, funcname, args) {
-    var namespace = Roots;
+    var namespace = AnsonKaoModules;
     funcname = (funcname === undefined) ? 'init' : funcname;
     if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
       namespace[func][funcname](args);
     }
   },
+  
   loadEvents: function() {
     UTIL.fire('common');
 
@@ -56,8 +78,11 @@ var UTIL = {
       UTIL.fire(classnm);
     });
   }
+  
 };
 
+  
 $(document).ready(UTIL.loadEvents);
 
-})(jQuery); // Fully reference jQuery after this point.
+  
+})(jQuery);

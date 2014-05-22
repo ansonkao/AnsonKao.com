@@ -4,5 +4,34 @@
 
 #background-image {
 	background-size: 1920px !important;
-	background-position: center -600px;
+	background-position: center -550px;
+  
+  &.mind-map-expanded {
+    background-position: center -200px;
+  }
+}
+
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+#mind-map {
+  height: 575px;
+
+  h1.mind-map-title {
+    line-height: 70px;
+    div a {
+      font-size: 12px;
+    }
+  }
+  h1 { font-size: 60px; letter-spacing: -4.0px; }
+  h2 { font-size: 40px; letter-spacing: -2.5px; }
+  h3 { font-size: 24px; letter-spacing: -0.5px; }
+  h4 { font-size: 16px; letter-spacing:  0.0px; }
+  
+  &.collapsed {
+    height: 160px;
+  }
 }

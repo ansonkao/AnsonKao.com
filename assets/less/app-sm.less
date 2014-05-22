@@ -5,6 +5,42 @@
 #background-image {
 	background-size: 1440px !important;
 	background-position: center -400px;
+  
+  &.mind-map-expanded {
+    background-position: center -200px;
+  }
+}
+
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+#mind-map {
+  height: 500px;
+
+  h1, h2, h3, h4 {
+    width: 250px;
+    height: 50px;
+    margin: -25px 0px 0px -125px;
+    line-height: 50px;
+  }
+  h1.mind-map-title {
+    width: 350px;
+    height: 80px;
+    margin: -40px 0px 0px -175px;
+
+    line-height: 50px;
+  }
+  h1 { font-size: 48px; letter-spacing: -3.0px; }
+  h2 { font-size: 30px; letter-spacing: -2.0px; }
+  h3 { font-size: 20px; letter-spacing: -0.5px; }
+  h4 { font-size: 12px; letter-spacing:  0.0px; }
+  
+  &.collapsed {
+    height: 120px;
+  }
 }
 
 
@@ -15,6 +51,7 @@
 
 .main {
   .box-shadow( inset -2px 0px 0px -1px rgba(0,0,0,0.5) );
+  #gradient > .horizontal-three-colors( rgba(0,0,0,0.0), rgba(96,96,96,0.5), 75%, rgba(255,255,255,0.1) );
   border-bottom: none;
   border-right: 1px solid rgba(255,255,255,0.5);
 }
