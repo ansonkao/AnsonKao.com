@@ -34,9 +34,7 @@
     <div class="col-lg-12">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        Menu
       </button>
       <nav class="collapse navbar-collapse nav-main text-center" role="navigation">
         <?php
