@@ -40,10 +40,10 @@ body {
   margin: 15px;
 }
 
-h1 { font-size: @font-size-h1 * 0.7; letter-spacing: -0.8px; font-weight: bold; }
-h2 { font-size: @font-size-h2 * 0.8; letter-spacing: -0.5px; font-weight: bold; }
-h3 { font-size: @font-size-h3 * 0.9; letter-spacing: -0.5px; font-weight: bold; }
-h4 { font-size: @font-size-h4 * 0.9; letter-spacing: -0.2px; font-weight: bold; }
+h1 { font-size: @font-size-h1 * 0.7; letter-spacing: -0.8px; }
+h2 { font-size: @font-size-h2 * 0.8; letter-spacing: -0.5px; }
+h3 { font-size: @font-size-h3 * 0.9; letter-spacing: -0.5px; }
+h4 { font-size: @font-size-h4 * 0.9; letter-spacing: -0.2px; }
 
 a {
   text-shadow: -1px -1px 0px rgba(255,255,255,0.25);
@@ -60,7 +60,7 @@ a {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
   
   a {
-    color: @sun-orange;
+    color: @sky-orange;
     text-shadow: 1px 1px 1px rgba(0,0,0,1.0);
   }
 }
@@ -271,7 +271,7 @@ blockquote {
 
 .main {
   padding-top: 15px;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(128,128,128,0.3);
   border-bottom: 1px solid rgba(0,0,0,0.5);
   min-height: 400px;
   
@@ -335,8 +335,12 @@ blockquote {
   }
   
   .entry-meta {
-    color: @sky-blue-faint;
+    font-size: 11px;
     margin-bottom: 0px;
+  }
+  .entry-tags a,
+  .entry-tags {
+    color: @sky-blue-faint;
   }
   
   .entry-content,
@@ -394,7 +398,7 @@ blockquote {
    ========================================================================== */
 
 .content-info {
-  margin: 20px auto 50px;
+  margin: 20px auto 20px;
   color: #FFF;
 }
 

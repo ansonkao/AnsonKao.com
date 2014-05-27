@@ -15,6 +15,8 @@ function roots_title() {
       return apply_filters('single_term_title', $term->name);
     } elseif (is_post_type_archive()) {
       return apply_filters('the_title', get_queried_object()->labels->name);
+    } elseif (is_tag()) {
+      return "#".single_tag_title("",false);
     } elseif (is_day()) {
       return sprintf(__('Daily Archives: %s', 'roots'), get_the_date());
     } elseif (is_month()) {

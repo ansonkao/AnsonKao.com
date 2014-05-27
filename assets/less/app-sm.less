@@ -11,10 +11,10 @@
   }
 }
 
-h1 { font-size: @font-size-h1 * 0.8; letter-spacing: -1.0px; font-weight: bold; }
-h2 { font-size: @font-size-h2 * 0.9; letter-spacing: -0.5px; font-weight: bold; }
-h3 { font-size: @font-size-h3 * 0.9; letter-spacing: -0.2px; font-weight: bold; }
-h4 { font-size: @font-size-h4 * 0.9; letter-spacing: -0.2px; font-weight: bold; }
+h1 { font-size: @font-size-h1 * 0.8; letter-spacing: -1.0px; }
+h2 { font-size: @font-size-h2 * 0.9; letter-spacing: -0.5px; }
+h3 { font-size: @font-size-h3 * 0.9; letter-spacing: -0.2px; }
+h4 { font-size: @font-size-h4 * 0.9; letter-spacing: -0.2px; }
 
 
 
@@ -69,4 +69,16 @@ h4 { font-size: @font-size-h4 * 0.9; letter-spacing: -0.2px; font-weight: bold; 
 
 .sidebar {
   border-top: none;
+}
+
+
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.hentry {
+  .entry-meta {
+    font-size: inherit;
+  }
 }

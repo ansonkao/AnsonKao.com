@@ -15,9 +15,8 @@ module.exports = function(grunt) {
     less: {
       dist: {
         files: {
-          'assets/css/main.min.css': [
-            'assets/less/app.less'
-          ]
+          'assets/css/main.min.css':   [ 'assets/less/app.less' ],
+          'assets/css/editor-custom-style.min.css': [ 'assets/less/editor.less' ]
         },
         options: {
           compress: true,
