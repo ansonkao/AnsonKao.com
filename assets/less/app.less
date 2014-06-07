@@ -356,6 +356,7 @@ blockquote {
   .entry-tags a,
   .entry-tags {
     color: @sky-blue-faint;
+    font-weight: bold;
   }
   
   .entry-content,
@@ -380,6 +381,17 @@ blockquote {
   }
 }
 
+.embedded-frame {
+  border: 1px solid #999;
+  border-radius: 5px;
+  .box-shadow( inset 0px 0px 5px rgba(0,0,0,0.5) );
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  padding: 0px 0px 0px 10px;
+  background-color: white;
+  margin: 15px 0px 15px;
+}
 
 
 /* ==========================================================================
