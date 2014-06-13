@@ -6,7 +6,7 @@
 // Add .img-embed class to images
 function my_image_class_filter( $classes )
 {
-	return $classes . ' img-embed';
+  return $classes . ' img-embed img-responsive';
 }
 add_filter( 'get_image_tag_class', 'my_image_class_filter' );
 
