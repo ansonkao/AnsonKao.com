@@ -35,6 +35,9 @@ var AnsonKaoModules = {
   common: {
     init: function() {
       
+      // Highlight.js
+      hljs.initHighlightingOnLoad();
+      
       // Mind-map toggle
       $(".js-mind-map-toggle").click(function(){
         AnsonKaoFunctions.mind_map_toggle( $(this) );
